@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestWPF
+namespace 滑稽音乐
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -25,31 +25,17 @@ namespace TestWPF
             InitializeComponent();
         }
 
-        //主页按钮
-        private void Homepage(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        //最大化或还原窗口
-        private void FullOrRestore(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        //关闭程序
-        private void ShutDown(object sender, RoutedEventArgs e)
+        private void Shutdown(object sender, RoutedEventArgs e)
         {
             App.Current.Shutdown();
         }
 
-        //拖放窗口
-        private void DropMove(object sender, MouseButtonEventArgs e)
+        private void Maximize(object sender, RoutedEventArgs e)
         {
-            this.DragMove();
+            //this.WindowState = WindowState.Maximized;
+            
         }
 
-        //最小化窗口
         private void Minimize(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;

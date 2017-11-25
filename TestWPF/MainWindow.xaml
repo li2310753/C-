@@ -5,16 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="680" Width="1050" MinWidth="1050" MinHeight="650" Visibility="Visible" WindowStyle="None">
-    <Grid Cursor="None">
-        <Grid Background="#FFC62F2F" Height="50" VerticalAlignment="Top">
-            <Button Content="" BorderBrush="{x:Null}" Foreground="{x:Null}" HorizontalAlignment="Left" Width="50" Click="Button_Click_1">
+        Title="滑稽音乐" Height="710" MinHeight="710" Width="1064" MinWidth="1064" Visibility="Visible" Padding="20" BorderThickness="0" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" AllowDrop="True" AllowsTransparency="True" WindowStyle="None" >
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.75" Color="#FFA0A0A0"/>
+    </Window.Effect>
+
+    <Grid Background="WhiteSmoke" ShowGridLines="True">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FFC62F2F" Height="50" VerticalAlignment="Top" OpacityMask="#FFC62F2F" MouseLeftButtonDown="DropMove">
+            <Button Content="Button" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Homepage" HorizontalAlignment="Left" Width="30" Margin="10,10,0,10">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="file:///E:/Important/Picture/滑稽50x50.png"/>
+                </Button.OpacityMask>
                 <Button.Background>
                     <ImageBrush ImageSource="file:///E:/Important/Picture/滑稽50x50.png"/>
                 </Button.Background>
             </Button>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="925,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Background="#FFDDDDDD"/>
-        </Grid>
+            <Button Content="Button" Margin="0,15,15,0" Click="ShutDown" BorderBrush="{x:Null}" Width="20" HorizontalAlignment="Right" Foreground="{x:Null}" BorderThickness="0" Padding="0" Height="20" VerticalAlignment="Top">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="{DynamicResource 关闭按钮}"/>
+                </Button.OpacityMask>
+                <Button.Background>
+                    <ImageBrush ImageSource="{DynamicResource 关闭按钮}"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Button" Margin="0,15,40,0" HorizontalAlignment="Right" Width="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="FullOrRestore" Height="20" VerticalAlignment="Top">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="{DynamicResource 最大化按钮}"/>
+                </Button.OpacityMask>
+                <Button.Background>
+                    <ImageBrush ImageSource="{DynamicResource 最大化按钮}"/>
+                </Button.Background>
+            </Button>
 
+            <Button Content="Button" Margin="0,15,65,0" HorizontalAlignment="Right" Width="20" BorderThickness="0" Height="20" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Minimize">
+                <Button.Background>
+                    <ImageBrush ImageSource="{DynamicResource 最小化按钮}"/>
+                </Button.Background>
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="{DynamicResource 最小化按钮}"/>
+                </Button.OpacityMask>
+            </Button>
+            <TextBox HorizontalAlignment="Left" Margin="45,10,0,10" TextWrapping="Wrap" Text="滑稽音乐" Width="100" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" IsReadOnly="True" FontSize="20" BorderThickness="0" VerticalContentAlignment="Center"/>
+        </Grid>
     </Grid>
+
 </Window>
